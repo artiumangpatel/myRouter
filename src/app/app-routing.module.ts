@@ -18,8 +18,8 @@ const routes: Routes = [
 {path:'contact-us',component:ContactUsComponent},
 //{path:'product',component:ProductComponent},
 //{path:'product/product1/:id',component:Product1Component},
-{path:'product',
- children:[{path:'',component:ProductComponent},
+{path:'product',component:ProductComponent,
+ children:[
           {path:'product1',component:Product1Component},
           {path:'product2',component:Product2Component},
           {path:'product3',component:Product3Component},
