@@ -8,14 +8,18 @@ import { ProductsService } from 'src/app/services/products.service';
   styleUrls: ['./product1.component.css']
 })
 export class Product1Component implements OnInit {
-  // product:any;
-  // productId:any;
-  // constructor(private service:ProductsService,private activatedRoute:ActivatedRoute) { }
-constructor(){}
+  product:any;
+  productId:any;
+  
+  constructor(private activatedRoute:ActivatedRoute,private service:ProductsService) { }
+//constructor(){}
   ngOnInit(): void {
-    // this.productId=this.activatedRoute.snapshot.paramMap.get('id');
-    // this.product=this.service.product.find((x: { id: any; })=>x.id===this.productId);}
+    this.productId = this.activatedRoute.snapshot.paramMap.get('id');
+   // this.productId = this.activatedRoute.snapshot.params['id'];
+    console.log("productid"+this.productId,this.service.products);
+     this.product = this.service.products.find((x:any) => x.id == this.productId);
+    console.log("product"+this.product.name)
+    }
   }
 
 
-}
