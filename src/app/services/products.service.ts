@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class ProductsService {
   
-   products=[{id:1,name:'laptop'},
-   {id:2,name:'TV'},
-   {id:3,name:'Mobile'},];
+   products=[{id:1,name:'laptop',image:"../../assets/laptop.jpg"},
+   {id:2,name:'TV',image:"../../assets/tv.jpg"},
+   {id:3,name:'Mobile',image:"../../assets/mobile.jpg"},];
   
    
   constructor() { }
