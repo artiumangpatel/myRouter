@@ -1,17 +1,18 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
-  selector: 'app-product1',
-  templateUrl: './product1.component.html',
-  styleUrls: ['./product1.component.css']
+  selector: 'app-product-details',
+  templateUrl: './product-details.component.html',
+  styleUrls: ['./product-details.component.css']
 })
-export class Product1Component implements OnInit,OnDestroy {
+export class ProductDetailsComponent implements OnInit,OnDestroy {
+
   product:any;
   productId:any;
   
-  products:{ id: number; name: string; image: ImageData; } | undefined
+  products:{ id: number; name: string; image: ImageData; description:string} | undefined
   RouteParamObs: any;
 
   constructor(private Route:ActivatedRoute,private service:ProductsService) { }
@@ -31,8 +32,7 @@ export class Product1Component implements OnInit,OnDestroy {
   });
  }
 ngOnDestroy() {
-  this.RouteParamObs.unScribe();
+  this.RouteParamObs.unsubscribe();
 }
-  }
 
-
+}

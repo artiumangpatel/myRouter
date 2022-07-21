@@ -1,0 +1,23 @@
+<div class="page-area">
+<div class="row col-md-12">
+   <!-- <div class="card col-md-4"> <p>product Id {{product.id}}</p>
+    <p>product  Name{{product.name}}</p></div>
+     -->
+    <div class="site-image">
+      <!-- <img src="../../assets/laptop.jpg" class="card-img-top" alt="...">  -->
+      <img src= {{product.image}} class="card-img-top" alt="..."> </div></div>
+     <div class="card-body">
+       <h2 class="card-title">{{product.name}}</h2>
+       <!-- <div style="text-align: center;">
+        <input type="text"[(ngModel)]="product.name">
+      </div> -->
+       <p class="card-text">{{product.description}}</p>
+       
+       <a routerLink="/products"class="btn btn-primary">go products</a>
+  
+       <a [routerLink]="['/products/productDetails', 1]">Go to fitst product</a>
+       <!-- <button>Edit</button> -->
+     </div>
+    </div>
+  
+  
