@@ -43,4 +43,8 @@ export class ProductDetailsComponent implements OnInit,OnDestroy {
 this.router.navigate(['/products/productDetails',this.productId],{queryParams:{edit:true}});
   }
 
+  updateProduct() {
+    this.router.navigate(['/products/productDetails',this.productId]);
+  }
+
 }
