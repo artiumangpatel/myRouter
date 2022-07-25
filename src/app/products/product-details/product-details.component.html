@@ -7,16 +7,19 @@
       <!-- <img src="../../assets/laptop.jpg" class="card-img-top" alt="...">  -->
       <img src= {{product.image}} class="card-img-top" alt="..."> </div></div>
      <div class="card-body">
-       <h2 class="card-title">{{product.name}}</h2>
-       <!-- <div style="text-align: center;">
+       <h2 class="card-title" *ngIf="!editMode">{{product.name}}</h2>
+       <div style="text-align: center;" *ngIf="editMode">
         <input type="text"[(ngModel)]="product.name">
-      </div> -->
+      </div> 
        <p class="card-text">{{product.description}}</p>
-       
-       <a routerLink="/products"class="btn btn-primary">go products</a>
+       <!-- <a  class="btn btn-primary"[routerLink]="['/products/productDetails', 1]">previous   </a>  -->
+
+       <a routerLink="/products"class="btn btn-primary">go products   </a>
   
-       <a [routerLink]="['/products/productDetails', 1]">Go to fitst product</a>
-       <!-- <button>Edit</button> -->
+       <!-- <a  class="btn btn-primary"[routerLink]="['/products/productDetails', 3]">next</a> -->
+       <!-- <button [routerLink]="['/products/productDetails',product.id]" [quaryParams]="{edit:true,}">Edit</button> -->
+       <button (click)="appendQueryParam()">Edit</button>
+       <button (click)="editMode=false">Update</button>
      </div>
     </div>
   

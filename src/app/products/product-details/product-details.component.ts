@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -14,8 +14,9 @@ export class ProductDetailsComponent implements OnInit,OnDestroy {
   
   products:{ id: number; name: string; image: ImageData; description:string} | undefined
   RouteParamObs: any;
+  editMode:boolean=false;
 
-  constructor(private Route:ActivatedRoute,private service:ProductsService) { }
+  constructor(private Route:ActivatedRoute,private service:ProductsService,private router:Router) { }
 //constructor(){}
   ngOnInit(): void {
   //   this.productId = this.Route.snapshot.paramMap.get('id');
@@ -30,9 +31,16 @@ export class ProductDetailsComponent implements OnInit,OnDestroy {
       this.product = this.service.products.find((x:any) => x.id == this.productId);
       
   });
+  // this.editMode=Boolean(this.Route.snapshot.queryParamMap.get('edit'));
+  this.Route.queryParamMap.subscribe((param)=>{
+    this.editMode=Boolean (param.get('edit'));})
+  console.log("editMode :"+this.editMode);
  }
-ngOnDestroy() {
-  this.RouteParamObs.unsubscribe();
-}
+ ngOnDestroy() {
+   this.RouteParamObs.unsubscribe();
+  }
+  appendQueryParam(){
+this.router.navigate(['/products/productDetails',this.productId],{queryParams:{edit:true}});
+  }
 
 }
