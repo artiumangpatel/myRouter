@@ -15,6 +15,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductsService } from './services/products.service';
 import { ProductGuardService } from './services/product-guard.service';
 import { AuthService } from './services/auth.service';
+import { CanDeactivateService } from './services/can-deactivate.service';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { AuthService } from './services/auth.service';
     NgbModule,
     FormsModule
   ],
-  providers: [ProductsService,ProductGuardService,AuthService],
+  providers: [ProductsService,ProductGuardService,AuthService,CanDeactivateService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

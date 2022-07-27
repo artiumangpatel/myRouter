@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { ProductsComponent } from './products/products.component';
+import { CanDeactivateService } from './services/can-deactivate.service';
 import { ProductGuardService } from './services/product-guard.service';
 
 
@@ -15,7 +16,7 @@ const routes: Routes = [
 {path:'home',component:HomeComponent},
 {path:'login',component:LoginComponent},
 {path:'about',component:AboutComponent},
-{path:'contact-us',component:ContactUsComponent},
+{path:'contact-us',component:ContactUsComponent,canDeactivate:[CanDeactivateService]},
 //canActiveGuard
 // {path:'products',component:ProductsComponent,canActivate:[ProductGuardService]},
 // {path:'products/productDetails/:id',component:ProductDetailsComponent},

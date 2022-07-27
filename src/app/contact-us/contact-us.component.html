@@ -1,12 +1,49 @@
-<div class="page-area">
-<div class="row col-md-8">
-<div class="card text-white bg-success my-4  ">
-    <div class="card-header">Contact-us</div>
-    <div class="card-body">
-      <h5 class="card-title">Success card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    </div>
-  </div>
-
-  
-</div></div>
+    <form class="row g-3">
+      <div class="col-md-6">
+        <label for="fname" class="form-label">FirstName</label>
+        <input type="text" class="form-control" id="fname" placeholder="your name .." [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-6">
+        <label for="lname" class="form-label">LastName</label>
+        <input type="text" class="form-control" id="lname" placeholder="your last name ..." [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}">
+      </div>
+      <div class="col-md-4">
+        <label for="inputState" class="form-label">country</label>
+        <select id="inputState" class="form-select" [(ngModel)]="Country" [ngModelOptions]="{standalone: true}">
+          <option selected>Canada</option>
+          <option>USA</option>
+          <option>Australia</option>
+        </select>
+      </div>
+      <div class="form-floating">
+        <textarea class="form-control" placeholder="Leave a comment here" id="Comments" style="height: 100px" [(ngModel)]="comments" [ngModelOptions]="{standalone: true}"></textarea>
+        <label for="floatingTextarea2">Comments</label>
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <!-- <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+      </div>
+      <div class="col-md-6"> 
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" id="inputCity">
+      </div>
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" id="inputZip">
+      </div>
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck">
+          <label class="form-check-label" for="gridCheck">
+            Check me out
+          </label>
+        </div>
+      </div> -->
+    </form>
