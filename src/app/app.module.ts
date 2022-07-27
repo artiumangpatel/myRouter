@@ -12,6 +12,9 @@ import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductsService } from './services/products.service';
+import { ProductGuardService } from './services/product-guard.service';
+import { AuthService } from './services/auth.service';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     NgbModule,
     FormsModule
   ],
-  providers: [],
+  providers: [ProductsService,ProductGuardService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

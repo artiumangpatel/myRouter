@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { ProductsComponent } from './products/products.component';
+import { ProductGuardService } from './services/product-guard.service';
 
 
 const routes: Routes = [
@@ -15,14 +16,21 @@ const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'about',component:AboutComponent},
 {path:'contact-us',component:ContactUsComponent},
- {path:'products',component:ProductsComponent},
- {path:'products/productDetails/:id',component:ProductDetailsComponent},
-//  {path:'products',component:ProductsComponent,
+{path:'products',component:ProductsComponent,canActivate:[ProductGuardService]},
+{path:'products/productDetails/:id',component:ProductDetailsComponent},
+
+//nested child
+// {path: '', children:[
+//   {path:'productDetails/:id',component:ProductDetailsComponent}
+// ]}, 
+{path:'**',component:PageNotFoundComponent}, //wild card component(Error Page)
+
+
+ //  {path:'products',component:ProductsComponent,
 //  children:[
 //           {path:'productDetails',component:ProductDetailsComponent},
         
 // ]},
-{path:'**',component:PageNotFoundComponent},
 ];
 
 @NgModule({
