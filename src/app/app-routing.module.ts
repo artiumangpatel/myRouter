@@ -16,13 +16,16 @@ const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'about',component:AboutComponent},
 {path:'contact-us',component:ContactUsComponent},
-{path:'products',component:ProductsComponent,canActivate:[ProductGuardService]},
-{path:'products/productDetails/:id',component:ProductDetailsComponent},
+//canActiveGuard
+// {path:'products',component:ProductsComponent,canActivate:[ProductGuardService]},
+// {path:'products/productDetails/:id',component:ProductDetailsComponent},
+
 
 //nested child
-// {path: '', children:[
-//   {path:'productDetails/:id',component:ProductDetailsComponent}
-// ]}, 
+{path:'products',component:ProductsComponent},
+{path: 'products',canActivateChild:[ProductGuardService], children:[
+  {path:'productDetails/:id',component:ProductDetailsComponent}
+]}, 
 {path:'**',component:PageNotFoundComponent}, //wild card component(Error Page)
 
 
