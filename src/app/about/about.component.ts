@@ -11,5 +11,9 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  canExit(){
+    
+      return confirm('you have unsaved changes.Do you really want to discard this changes?')
+    }
 
 }

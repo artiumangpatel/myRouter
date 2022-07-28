@@ -15,7 +15,7 @@ const routes: Routes = [
 {path:'',redirectTo:'home',pathMatch:'full'},
 {path:'home',component:HomeComponent},
 {path:'login',component:LoginComponent},
-{path:'about',component:AboutComponent},
+{path:'about',component:AboutComponent,canDeactivate:[CanDeactivateService]},
 {path:'contact-us',component:ContactUsComponent,canDeactivate:[CanDeactivateService]},
 //canActiveGuard
 // {path:'products',component:ProductsComponent,canActivate:[ProductGuardService]},

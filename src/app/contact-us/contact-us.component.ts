@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { IdeactivateComponent } from '../services/can-deactivate.service';
 
 @Component({
   selector: 'app-contact-us',
   templateUrl: './contact-us.component.html',
   styleUrls: ['./contact-us.component.css']
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent implements OnInit,IdeactivateComponent {
 
   firstName: any;
   lastName: any;
