@@ -9,6 +9,7 @@ import { ProductDetailsComponent } from './products/product-details/product-deta
 import { ProductsComponent } from './products/products.component';
 import { CanDeactivateService } from './services/can-deactivate.service';
 import { ProductGuardService } from './services/product-guard.service';
+import { ProductResolveService } from './services/product-resolve.service';
 
 
 const routes: Routes = [
@@ -23,7 +24,7 @@ const routes: Routes = [
 
 
 //nested child
-{path:'products',component:ProductsComponent},
+{path:'products',component:ProductsComponent,resolve:{products:ProductResolveService}},
 {path: 'products',canActivateChild:[ProductGuardService], children:[
   {path:'productDetails/:id',component:ProductDetailsComponent}
 ]}, 

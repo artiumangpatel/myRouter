@@ -12,7 +12,11 @@ export class ProductsService {
    
   constructor() { }
   getProducts(){
-    
     return this.products;
   }
+  getAllProducts():any{
+const productList:any=new Promise((resolve,reject)=>{
+  setTimeout(()=>{
+    resolve(this.products)},5000)});
+return productList;}
 }

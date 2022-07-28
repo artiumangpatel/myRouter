@@ -16,6 +16,7 @@ import { ProductsService } from './services/products.service';
 import { ProductGuardService } from './services/product-guard.service';
 import { AuthService } from './services/auth.service';
 import { CanDeactivateService } from './services/can-deactivate.service';
+import { ProductResolveService } from './services/product-resolve.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,7 @@ import { CanDeactivateService } from './services/can-deactivate.service';
     NgbModule,
     FormsModule
   ],
-  providers: [ProductsService,ProductGuardService,AuthService,CanDeactivateService],
+  providers: [ProductsService,ProductGuardService,AuthService,CanDeactivateService,ProductResolveService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
