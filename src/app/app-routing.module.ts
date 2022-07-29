@@ -18,13 +18,13 @@ const routes: Routes = [
 {path:'login',component:LoginComponent},
 {path:'about',component:AboutComponent,canDeactivate:[CanDeactivateService]},
 {path:'contact-us',component:ContactUsComponent,canDeactivate:[CanDeactivateService]},
-//canActiveGuard
+// //canActiveGuard
 // {path:'products',component:ProductsComponent,canActivate:[ProductGuardService]},
 // {path:'products/productDetails/:id',component:ProductDetailsComponent},
 
 
 //nested child
-{path:'products',component:ProductsComponent,resolve:{products:ProductResolveService}},
+{path:'products',component:ProductsComponent,canActivate:[ProductGuardService],resolve:{products:ProductResolveService}},
 {path: 'products',canActivateChild:[ProductGuardService], children:[
   {path:'productDetails/:id',component:ProductDetailsComponent}
 ]}, 
@@ -39,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{enableTracing:true})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
